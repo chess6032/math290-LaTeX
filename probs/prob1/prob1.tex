@@ -1,0 +1,56 @@
+\documentclass{article}
+
+\usepackage{amsthm}
+\usepackage{graphicx}
+% \usepackage{amssymb}
+
+\newtheorem{proposition}{Proposition}
+
+\title{MATH290 Problem 1}
+\author{Caleb Hessing}
+\date{September 6, 2026}
+
+\begin{document}
+\maketitle 
+
+A famous pirate captain has hidden his treasure in three chests. One chest contains
+gold coins, one chest contains counterfeit coins, and one chest contains a mixture of
+gold and counterfeit coins. Each chest is labeled to indicate its contents: either G
+for gold, C for counterfeit, or B for both. Because this pirate captain is very clever
+and dishonest, none of the labels match the actual contents of the chest. You cannot
+visually distinguish a gold coin from a counterfeit one, but you can perform a lengthy
+chemical test to tell the two apart. What is the minimum number of coins you need to
+test to determine the contents of all three chests, and what strategy should you use?
+
+\begin{proposition}
+    Only one coin test is necessary to determine the contents of all three chests.
+\end{proposition}
+
+\begin{proof}\nobreakspace
+
+    Notice that because the contents of the chests do not match their labels,
+    the chest labelled B must contain either all gold coins or all
+    counterfeit coins. Therefore, we can determine chest B's contents
+    by testing just one of its coins. If the one coin is counterfeit, all of chest
+    B chest's coins are also; if it is gold, all of chest B's coins are gold.
+    
+    Consider the case where the coin we test is counterfeit, revealing that
+    chest B contains only counterfeit coins. That means that of two remaining chests, labelled 
+    C and G, one contains only gold coins and the other contains both
+    gold and counterfeit coins. Because the chests' contents don't match their labels,
+    chest G cannot contain only gold; therefore, it must contain both counterfeit and gold 
+    coins. That leaves only one chest unidentified---chest C---which, having
+    eliminated all other options, must contain only gold coins.
+
+    Consider the opposite case, where the coin we test reveals chest B
+    contains only gold coins. Following the same logic, we can deduce that
+    chest C must contain both counterfeit and gold coins, and chest G must 
+    contain only counterfeit coins.
+
+    In either case, it takes one coin to determine the contents of chest B,
+    and zero coins to deduce the contents of chests C and G. Therefore,
+    only one coin test is necessary to determine the contents of all three chests.
+
+\end{proof}
+
+\end{document}
