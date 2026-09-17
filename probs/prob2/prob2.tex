@@ -26,21 +26,47 @@
     is a multiple of $6$ if it can be expressed as the product of $6$ and some other integer. 
     Consider a multiple of six $n = 6i$ and another $m = 6j$. Observe,
 
-    $$
+    \[
     \begin{aligned}
     n + m &= 6i + 6j \\
     &= 6(i + j)
-    \end{aligned}$$
+    \end{aligned}
+    \]
 
     Relying on the property that summing integers yields an integer, we've shown that $n + m$
     can be expressed as a product of $6$ and some other integer $i + j$. That is, $n+ m$ is
     a multiple of $6$ for any multiples of six $n$ and $m$.
 
-    Let $f_k$ be the sequence $k^3 - k$ for integers $k \ge 0$. Let $g_k$ be the sequence
-    formed by the \textit{difference} between $f_{n+1}$ and $f_{n}$ for any $n \in \mathbb Z$. That is,
+    Secondly, observe what happens if you substitute $-k$ for $k$:
 
-    $$f_{k+1} = f_k + g_k$$
+    \[
+    \begin{aligned}
+        & (-k)^3 - (-k) \\
+        =& -(k^3) + k \\
+        =& -(k^3 - k)
+    \end{aligned}
+    \]
 
+    Thus, if $k^3 - k$ can be expressed as $6n$ for some integers $k$ and $n$, then $(-k)^3 - (-k)$
+    can be expressed as $-6n$. Therefore, if I can show that $k^3 - k$ is a multiple of $6$ for
+    all integers $k \ge 0$, then $k^3 - k$ is a multiple of $6$ for all integers $k < 0$. With
+    this in mind, I'll only focus on integers $k \ge 0$ for the rest of the proof.
+
+    Let $f_k$ be the sequence $k^3 - k$ for integers $k \ge 0$. It turns out that rather than
+    proving each term in this sequence is a multiple of $6$, it's easier to prove that
+    \textit{the difference between consecutive terms} is a multiple of $6$. (Or at least
+    \textit{I} think it is.) Let's let $g_k$ be the difference between any $f_{k+1}$ and 
+    $f_{k}$. That is,
+
+    \[
+    \begin{aligned}
+        g_k &= f_{k+1} - f_{k} \\
+        f_{k+1} &= f_k + g_k
+    \end{aligned}
+    \]
+
+    If I can show that $g_k$ is a multiple of $6$ for all integers $k$, then so long as the
+    sequence starts with a multiple of $6$ all following terms will be multiples of $6$. 
 
 
 \end{proof}
