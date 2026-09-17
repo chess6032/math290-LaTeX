@@ -102,6 +102,23 @@
     Therefore, having shown that $g_k$ is a multiple of $3$ and even for every integer $k$,
     I have proven that $g_k$ is a multiple of $6$ for every integer $k$.
 
+    The rest can be proven with mathematical induction on $k$. Suppose that for some integer
+    $k \ge 0$, $f_k$ is a multiple of $6$. Consider then the case for $k+1$: $f_{k+1} = f_k + g_k$.
+    Because $f_k$ and $g_k$ are both multiples of $6$, their sum, $f_{k+1}$, is also a
+    multiple of $6$. Thus, the result holds for the inductive case.
+
+    Finally, consider the base case $f_0$. Observe,
+
+    \[\begin{aligned}
+        f_0 &= (0)^3 - (0) \\
+            &= 0
+    \end{aligned}\]
+
+    $0$ is a multiple of $6$ (it can be expressed as $6 \times 0$). Thus, the result holds for
+    the base case $k = 0$. Then, by the principle of mathematical induction, $k^3 - k$ is
+    a multiple of $6$ for every integer $k \ge 0$. And, therefore, $k^3 - k$ is a multiple of
+    $6$ for every integer $k < 0$ also.
+
 \end{proof}
 
 \end{document}
