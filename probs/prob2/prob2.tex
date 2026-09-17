@@ -34,12 +34,7 @@
     \end{aligned}
     \]
 
-    Thus, if $k^3 - k$ can be expressed as $6n$ for some integers $k$ and $n$, then $(-k)^3 - (-k)$
-    can be expressed as $6(-n)$. Therefore, if I can show that $k^3 - k$ is a multiple of $6$ for
-    all integers $k \ge 0$, then $k^3 - k$ is a multiple of $6$ for all integers $k < 0$. With
-    this in mind, I'll focus only on integers $k \ge 0$ for the rest of this proof.
-
-    Let $f_k$ be the sequence $k^3 - k$ for integers $k \ge 0$. It turns out that rather than
+    Let $f_k$ be the bi-infinite sequence $k^3 - k$ for all integers $k$. It turns out that rather than
     proving each term in this sequence is a multiple of $6$, it's easier to prove that
     \textit{the difference between consecutive terms} is a multiple of $6$. (Or at least
     \textit{I} found it to be.) Let's let $g_k$ be the difference between any $f_{k+1}$ and 
@@ -52,11 +47,9 @@
     \end{aligned}
     \]
 
-    If I can show that $g_k$ is a multiple of $6$ for all integers $k$, then so long as the
-    \textit{first} term of $f$ is a multiple of $6$, \textit{all} terms of $f$ are multiples 
-    of $6$. This relies on the property that the sum of two multiples of $6$ is itself a 
-    multiple of $6$. I'll briefly demonstrate this property for two multiples of six $n = 6i$ 
-    and $m = 6j$, where $n$, $m$, $i$, and $j$ are all integers. Observe,
+    Consider then that the sum of two multiples of $6$ is itself a multiple of $6$. I'll
+    demonstrate this for two multiples of six $n = 6i$ and $m = 6j$, where $n$, $m$, $i$, and
+    $j$ are all integers. Observe,
 
     \[
     \begin{aligned}
@@ -65,13 +58,19 @@
     \end{aligned}
     \]
 
-    Relying on the property that summing integers yields an integer, we've shown that $n + m$
+    Relying on the property that the sum of integers is an integer, we've shown that $n + m$
     can be expressed as a product of $6$ and some other integer $i + j$, and thus $n + m$ is
     a multiple of $6$.
 
-    Let's start by showing that $g_k$ is a multiple of $6$ for all integers $k$. Because $6$
-    is equal to $2 \times 3$, I can prove $g_k$ is a multiple of $6$ by proving it is a multiple
-    of both $2$ and $3$. I can prove $g_k$ is always a multiple of $3$ by showing it can be 
+    Thus, if I can show that every term in $g$ is a multiple of $6$, I can use mathematical
+    induction to show that every term in $f$ is the sum of two multiples of $6$---in which case
+    all terms of $f$ are themselves multiples of $6$.
+
+    To start, I'll show that $g_k$ is a multiple of $6$ for 
+    all integers $k$. Because $6$ is equal to $2 \times 3$, I can prove $g_k$ is a 
+    multiple of $6$ by proving it is a multiple of both $2$ and $3$ for any integer $k$. 
+    
+    I can prove $g_k$ is always a multiple of $3$ by showing it can be 
     expressed as the product of $3$ and some other integer. Observe,
 
     \[
@@ -92,7 +91,7 @@
     integer $k$, both $k^2$ and $k$ are even, and so their sum $k^2 + k$ is even. Lastly, recognize that
     for any \textit{odd} integer $k$, both $k^2$ and $k$ are odd, and so $k^2 + k$ is
     even. So, regardless of whether an integer $k$ is even or odd, $k^2 + k$ is even and 
-    therefore means $g_k = 3(k^2 - k)$ is also even. 
+    therefore $g_k = 3(k^2 - k)$ is also even. 
     
     (This line of reasoning relies on the knowledge that the product of an even and an odd is 
     even; the square of an even is even; the square
@@ -103,7 +102,7 @@
     I have proven that $g_k$ is a multiple of $6$ for every integer $k$.
 
     The rest can be proven by mathematical induction on $k$. Suppose that for some integer
-    $k \ge 0$, $f_k$ is a multiple of $6$. Consider then the case for $k+1$: $f_{k+1} = f_k + g_k$.
+    $k$, $f_k$ is a multiple of $6$. Consider then the case for $k+1$.
     Because $f_k$ and $g_k$ are both multiples of $6$, their sum, $f_{k+1}$, is also a
     multiple of $6$. Thus, the result holds for the inductive case.
 
@@ -116,9 +115,7 @@
 
     $0$ is a multiple of $6$ (it can be expressed as $6 \times 0$). Thus, the result holds for
     the base case $k = 0$. Then, by the principle of mathematical induction, $k^3 - k$ is
-    a multiple of $6$ for every integer $k \ge 0$. And, therefore, $k^3 - k$ is a multiple of
-    $6$ for every integer $k < 0$ also. Altogether, $k^3 - k$ is a multiple of $6$ for every
-    integer $k$.
+    a multiple of $6$ for every integer $k$.
 
 \end{proof}
 
