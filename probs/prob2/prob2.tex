@@ -22,22 +22,8 @@
 
 \begin{proof}\nobreakspace
 
-    Firstly, note that the sum of two multiples of $6$ is itself a multiple of $6$. An integer
-    is a multiple of $6$ if it can be expressed as the product of $6$ and some other integer. 
-    Consider a multiple of six $n = 6i$ and another $m = 6j$. Observe,
-
-    \[
-    \begin{aligned}
-    n + m &= 6i + 6j \\
-    &= 6(i + j)
-    \end{aligned}
-    \]
-
-    Relying on the property that summing integers yields an integer, we've shown that $n + m$
-    can be expressed as a product of $6$ and some other integer $i + j$. That is, $n+ m$ is
-    a multiple of $6$ for any multiples of six $n$ and $m$.
-
-    Secondly, observe what happens if you substitute $-k$ for $k$:
+    Firstly, recall that an integer is a multiple of $6$ if it can be expressed as the product 
+    of $6$ and some other integer. Now, observe what happens if you substitute $-k$ for $k$:
 
     \[
     \begin{aligned}
@@ -66,7 +52,21 @@
     \]
 
     If I can show that $g_k$ is a multiple of $6$ for all integers $k$, then so long as the
-    sequence starts with a multiple of $6$ all following terms will be multiples of $6$. 
+    sequence starts with a multiple of $6$ all following terms will be multiples of $6$. This 
+    relies on the property that the sum of two multiples of $6$ is itself a multiple of $6$.
+    I'll briefly demonstrate this property for two multiples of six $n = 6i$ and $m = 6j$,
+    where $n$, $m$, $i$, and $j$ are all integers. Observe,
+
+    \[
+    \begin{aligned}
+    n + m &= 6i + 6j \\
+    &= 6(i + j)
+    \end{aligned}
+    \]
+
+    Relying on the property that summing integers yields an integer, we've shown that $n + m$
+    can be expressed as a product of $6$ and some other integer $i + j$, and thus $n + m$ is
+    a multiple of $6$.
 
 
 \end{proof}
