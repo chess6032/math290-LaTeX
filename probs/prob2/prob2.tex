@@ -10,7 +10,7 @@
 
 \title{MATH290}
 \author{Caleb Hessing}
-\date{Jan 1, 1970}
+\date{September 16, 2026}
 
 \begin{document}
 
@@ -37,7 +37,7 @@
     Thus, if $k^3 - k$ can be expressed as $6n$ for some integers $k$ and $n$, then $(-k)^3 - (-k)$
     can be expressed as $6(-n)$. Therefore, if I can show that $k^3 - k$ is a multiple of $6$ for
     all integers $k \ge 0$, then $k^3 - k$ is a multiple of $6$ for all integers $k < 0$. With
-    this in mind, I'll only focus on integers $k \ge 0$ for the rest of this proof.
+    this in mind, I'll focus only on integers $k \ge 0$ for the rest of this proof.
 
     Let $f_k$ be the sequence $k^3 - k$ for integers $k \ge 0$. It turns out that rather than
     proving each term in this sequence is a multiple of $6$, it's easier to prove that
@@ -89,8 +89,8 @@
     To prove that $g_k$ is a multiple of $2$ for all integers $k$, I will prove that $g_k$ is
     \textit{even} for all integers $k$. Firstly, recognize that for any integer $k$, if 
     $k^2 + k$ is even, then $3(k^2 + k)$ is even. Then, recognize that for any \textit{even} 
-    integer $k$, both $k^2$ and $k$ are even, and so $k^2 + k$ is even. Lastly, recognize that
-    for any \textit{odd} integer $k$, both $k^2$ and $k$ are odd, and so their sum $k^2 + k$ is
+    integer $k$, both $k^2$ and $k$ are even, and so their sum $k^2 + k$ is even. Lastly, recognize that
+    for any \textit{odd} integer $k$, both $k^2$ and $k$ are odd, and so $k^2 + k$ is
     even. So, regardless of whether an integer $k$ is even or odd, $k^2 + k$ is even and 
     therefore means $g_k = 3(k^2 - k)$ is also even. 
     
@@ -102,7 +102,7 @@
     Therefore, having shown that $g_k$ is a multiple of $3$ and even for every integer $k$,
     I have proven that $g_k$ is a multiple of $6$ for every integer $k$.
 
-    The rest can be proven with mathematical induction on $k$. Suppose that for some integer
+    The rest can be proven by mathematical induction on $k$. Suppose that for some integer
     $k \ge 0$, $f_k$ is a multiple of $6$. Consider then the case for $k+1$: $f_{k+1} = f_k + g_k$.
     Because $f_k$ and $g_k$ are both multiples of $6$, their sum, $f_{k+1}$, is also a
     multiple of $6$. Thus, the result holds for the inductive case.
@@ -117,7 +117,8 @@
     $0$ is a multiple of $6$ (it can be expressed as $6 \times 0$). Thus, the result holds for
     the base case $k = 0$. Then, by the principle of mathematical induction, $k^3 - k$ is
     a multiple of $6$ for every integer $k \ge 0$. And, therefore, $k^3 - k$ is a multiple of
-    $6$ for every integer $k < 0$ also.
+    $6$ for every integer $k < 0$ also. Altogether, $k^3 - k$ is a multiple of $6$ for every
+    integer $k$.
 
 \end{proof}
 
