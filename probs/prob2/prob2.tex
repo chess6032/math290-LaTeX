@@ -1,0 +1,48 @@
+\documentclass{article} % amsmart?
+
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{amssymb}
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+
+\title{MATH290}
+\author{Caleb Hessing}
+\date{Jan 1, 1970}
+
+\begin{document}
+
+\maketitle
+
+\begin{proposition}
+    For any integer $k$, $k^3 - k$ is a multiple of $6$.
+\end{proposition}
+
+\begin{proof}\nobreakspace
+
+    Firstly, note that the sum of two multiples of $6$ is itself a multiple of $6$. An integer
+    is a multiple of $6$ if it can be expressed as the product of $6$ and some other integer. 
+    Consider a multiple of six $n = 6i$ and another $m = 6j$. Observe,
+
+    $$
+    \begin{aligned}
+    n + m &= 6i + 6j \\
+    &= 6(i + j)
+    \end{aligned}$$
+
+    Relying on the property that summing integers yields an integer, we've shown that $n + m$
+    can be expressed as a product of $6$ and some other integer $i + j$. That is, $n+ m$ is
+    a multiple of $6$ for any multiples of six $n$ and $m$.
+
+    Let $f_k$ be the sequence $k^3 - k$ for integers $k \ge 0$. Let $g_k$ be the sequence
+    formed by the \textit{difference} between $f_{n+1}$ and $f_{n}$ for any $n \in \mathbb Z$. That is,
+
+    $$f_{k+1} = f_k + g_k$$
+
+
+
+\end{proof}
+
+\end{document}
