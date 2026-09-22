@@ -1,0 +1,58 @@
+\documentclass{article} % amsmart?
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{amssymb}
+
+
+\newtheorem{proposition}{Proposition}
+
+\title{MATH290}
+\author{Caleb Hessing}
+\date{Sep 21, 2026}
+
+\begin{document}
+
+\maketitle
+
+Make and prove a conjecture about a common divisor shared by all integers of the form
+$7^n - 4$ for $n$ a non-negative integer.
+
+\begin{proposition}
+    All integers of the form $7^n - 4$ for a non-negative integer $n$ are divisible by $3$.
+\end{proposition}
+
+\begin{proof} The proof is by induction on $n$. Consider a base case of $n=0$. Observe,
+
+    \[
+        7^0 - 4 = 1 - 4 = -3 
+    \]
+
+    $-3$ is divisible by $3$, so the result holds. Now suppose that the result holds for some 
+    non-negative integer $k$. That is, $7^k - 4$ can be expressed as the product of $3$ and 
+    some other integer $j$. Observe how we can rearrange this identity:
+
+    \[\begin{split}
+        7^k - 4 &= 3j \\
+        7^k &= 3j + 4
+    \end{split}\]
+
+    Now consider the case for $k+1$. Observe,
+
+    \[\begin{aligned}
+         &\ 7^{k+1} - 4 \\
+        =&\ 7(7^k) - 4 \\
+        =&\ 7(3j + 4) - 4 & [\text{by the inductive hypothesis}] \\
+        =&\ 21j + 28 - 4 \\
+        =&\ 21j + 24 \\
+        =&\ 3(7j + 8)
+    \end{aligned}
+    \]
+
+    $7j + 8$ is itself an integer. Thus, the result holds for the inductive case. Therefore,
+    by the principle of mathematical induction, the result holds for any integer $k \ge 0$.
+
+\end{proof}
+
+\end{document}
