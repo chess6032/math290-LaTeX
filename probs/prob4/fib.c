@@ -59,19 +59,30 @@ int main(int argc, char *argv[]) {
     cache[0] = 1; // F(1)
     cache[1] = 1; // F(2)
 
+    // fill cache
     fib(FIB_N);
 
-    int f;
-    int odd = 1;
-    int even = 1;
+    // print out fib sequence
+    int f_n;
+    int odd_idx = 1;
+    int even_idx = 1;
+    long odd_sum = 0;
+    long even_sum = 0;
     for (unsigned int i = 0; i < FIB_N; ++i) {
-        f = cache[i];
+        f_n = cache[i];
         if ((i+1) & 1) {
-            fprintf(odd_file, "O(%d): %d\n", odd++, f);
+            // ODD IDX
+            odd_sum += f_n;
+            fprintf(odd_file, "O(%d): %d    (%ld)\n", odd_idx, f_n, odd_sum);
+            fprintf(stdout, "F(%d): %d    (%d: %ld)\n", i+1, f_n, odd_idx, odd_sum);
+            ++odd_idx;
         } else {
-            fprintf(even_file, "E(%d): %d\n", even++, f);
+            // EVEN IDX
+            even_sum += f_n;
+            fprintf(even_file, "E(%d): %d    [%ld]\n", even_idx, f_n, even_sum);
+            fprintf(stdout, "F(%d): %d    [%d: %ld]\n", i+1, f_n, even_idx, even_sum);
+            ++even_idx;
         }
-        fprintf(stdout, "F(%d): %d\n", i+1, f);
     }
 
     free(cache);
