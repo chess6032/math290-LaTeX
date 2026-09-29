@@ -66,7 +66,7 @@ Now consider the case for $k+1$. Observe,
 
 Notice that the substitution of $F_{2k+2}$ for $F_{2k} + F_{2k+1}$ is valid because the index $2k+2$ is always greater than 3. So $F_{2k+2}$ sits within the $n \ge 3$ piece of $F_n$, where $F_n = F_{n-1} + F_{n-2}$.
 
-The result, $F_{2(k+1)}$, has the form $F_{2m}$ for $m = k+1$. Thus, the result holds in the inductive case. Therefore, by the principle of mathematical induction, the result holds for all $m \in \mathbb{N}$.
+The result, $F_{2(k+1)}$, has the form $F_{2m}$ for $m = k+1$. Thus, the result holds in the inductive case. Therefore, by the principle of mathematical induction, the result holds for any natural number $m$.
 
 \end{proof}
 
@@ -111,6 +111,10 @@ Consider the case for $k+1$. Observe,
                          &= F_{2k+3} - 1 \tag{by the definition of $F_n$} \\
                          &= F_{2(k+1)+1} - 1 \notag
 \end{align}
+
+Once again, the substitution of $F_{2k+3}$ for $F_{2k+1} + F_{2k+2}$ is valid because the index $2k+3$ is always greater than 3.
+
+The result $F_{2(k+1)+1} - 1$ has the form $F_{2m+1} - 1$ for $m = k+1$. Thus, the result holds for the inductive case, and by the principle of mathematical induction the result holds for all $m \in \mathbb{N}$.
 
 \end{proof}
 
