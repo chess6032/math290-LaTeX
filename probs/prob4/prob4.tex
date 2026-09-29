@@ -6,6 +6,7 @@
 \usepackage{amssymb}
 
 \newtheorem{proposition}{Proposition}
+\newcommand{\emptyline}{\vspace{\baselineskip}}
 
 \title{Problem 4}
 \author{Caleb Hessing}
@@ -31,7 +32,9 @@
 
 \begin{proof} The proof is by induction on $m$.
 
-  BASE CASE: Consider the case for $m=1$. Observe,
+  \emptyline
+
+  \textbf{BASE CASE:} Consider the case for $m=1$. Observe,
 
   \[\begin{aligned}
     \sum_{j=1}^1 F_{2j-1} &= F_{2(1)-1} \\
@@ -48,7 +51,9 @@
 
   Thus, the result holds for the base case $m=1$.
 
-  INDUCTIVE CASE: Suppose the result holds for some natural number $k$. That is,
+  \emptyline
+
+  \textbf{INDUCTION:} Suppose the result holds for some natural number $k$. That is,
 
   \[
     \sum_{j=1}^{k} F_{2j-1} = F_{2k}
@@ -78,7 +83,9 @@
 
 \begin{proof} The proof is by induction on $m$.
 
-  BASE CASE: Consider the case where $m=1$. Observe,
+  \emptyline
+
+  \textbf{BASE CASE:} Consider the case where $m=1$. Observe,
 
   \[\begin{aligned}
     \sum_{j=1}^1 F_{2j} &= F_{2(1)} \\
@@ -96,7 +103,9 @@
 
   Therefore, the result holds for the base case $m=1$.
 
-  INDUCTIVE CASE: Suppose the result holds for some natural number $k$. That is,
+  \emptyline
+
+  \textbf{INDUCTION:} Suppose the result holds for some natural number $k$. That is,
 
   \[
     \sum_{2j}^{k} = F_{2k+1}-1
