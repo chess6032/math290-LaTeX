@@ -21,8 +21,8 @@ int main(int argc, char *argv[]) {
     
     // open files
 
-    int odd_fd = STDOUT_FILENO;
-    int even_fd = STDOUT_FILENO;
+    int odd_fd = STDERR_FILENO;
+    int even_fd = STDERR_FILENO;
     FILE* odd_file;
     FILE* even_file;
     
@@ -73,16 +73,17 @@ int main(int argc, char *argv[]) {
         if ((i+1) & 1) {
             // ODD IDX
             odd_sum += f_n;
-            // fprintf(odd_file, "O(%d): %d    (%ld)\n", odd_idx, f_n, odd_sum);
             fprintf(odd_file, "F(%d): %d    (%ld)\n", i+1, f_n, odd_sum);
+            printf("F(%d): %d    (%ld)\n", i+1, f_n, odd_sum);
             ++odd_idx;
         } else {
             // EVEN IDX
             even_sum += f_n;
-            // fprintf(even_file, "E(%d): %d    [%ld]\n", even_idx, f_n, even_sum);
             fprintf(even_file, "F(%d): %d    [%ld]\n", i+1, f_n, even_sum);
+            printf("F(%d): %d    [%ld]\n", i+1, f_n, even_sum);
             ++even_idx;
         }
+        // printf("F(%d): %d\n", i+1, f_n);
     }
 
     free(cache);
