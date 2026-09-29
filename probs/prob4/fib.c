@@ -48,6 +48,7 @@ int main(int argc, char *argv[]) {
     }
     if ((even_file = fdopen(even_fd, "w")) == NULL) {
         fprintf(stderr, "Failed converting EVEN file to a stream\n");
+        return 2;
     }
     
     // initialize cache
