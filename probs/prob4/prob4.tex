@@ -25,7 +25,7 @@
 
 \begin{proposition}
   \[
-    \sum_{j=1}^{m} F_{2j-1} = F_{2m}
+    \forall m \in \mathbb{N}, \sum_{j=1}^{m} F_{2j-1} = F_{2m}
   \]
 \end{proposition}
 
@@ -48,11 +48,27 @@ and,
 
 Thus, the result holds for the base case $m=1$.
 
-INDUCTIVE CASE: Suppose the result holds for some $k$. That is,
+INDUCTIVE CASE: Suppose the result holds for some natural number $k$. That is,
 
 \[
   \sum_{j=1}^{k} F_{2j-1} = F_{2k}
 \]
+
+Now consider the case for $k+1$. Observe,
+
+\[\begin{aligned}
+  \sum_{j=1}^{k+1} F_{2j-1} &= \sum_{j=1}^k (F_{2j-1}) + F_{2(k+1)-1} \\
+                   &= F_{2k} + F_{2(k+1)-1} \\
+                   &= F_{2k} + F_{2k+1} \\
+                   &= F_{2k+2} \\
+                   &= F_{2(k+1)}
+\end{aligned}\]
+
+Let's pull back the curtain on some of the magic here. 
+$\sum_{j=1}^k (F_{2j-1}) = F_{2k}$ by the inductive hypothesis.
+And $F_{2k} + F_{2k+1} = F_{2k+2}$ by the definition of the Fibonacci sequence. We are allowed to do this substitution because the index $2k+2$ is always greater than 3, meaning that $F_{2k+2}$ sits within the $n > 3$ piece of $F_n$.
+
+The result, $F_{2(k+1)}$ has the form $F_{2m}$ for $m = k+1$. Thus, the result holds in the inductive case. Therefore, by the principle of mathematical induction, the result holds for all $m \in \mathbb{N}$.
 
 \end{proof}
 
