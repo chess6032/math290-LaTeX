@@ -17,7 +17,7 @@
 
 \maketitle
 
-Let $F_n$ be the $n^\text{th}$ term in the Fibonacci sequence, which is defined as follows:
+Let $F_n$ be the $n^\text{th}$ term in the Fibonacci sequence, $\{F_n\}$, defined as follows:
 
 \[
   F_n = \begin{cases}
@@ -27,29 +27,29 @@ Let $F_n$ be the $n^\text{th}$ term in the Fibonacci sequence, which is defined 
   \end{cases}
 \]
 
-Then, let \{$O_n$\} be the sequence of the Fibonacci sequence's \textit{odd}-indexed terms and
-\{$E_n$\} be the sequence of its \textit{even}-indexed terms.
+Then, let $\{O_n\}$ be the sequence of the Fibonacci sequence's \textit{odd}-indexed terms and
+$\{E_n\}$ be the sequence of its \textit{even}-indexed terms.
 
 Let's observe the sums of these two sequences.
 
 \begin{table}[h]
   \centering
-  \begin{tabular}{ccccc}
+  \begin{tabular}{lllll}
     \toprule
-    $n$ & $O_n$ & $E_n$ & $\sum O_n$ & $\sum E_n$ \\
+    $n$ & $O_n$ & $\sum O_n$ & $E_n$ & $\sum E_n$ \\
     \midrule
-    1 \\
-    2 \\
-    3 \\
-    4 \\
-    5 \\
-    6 \\
-    7 \\
-    8 \\
-    9 \\
-    10 \\
-    11 \\
-    12 \\
+    1  & 1     & 1     & 1     & 1     \\
+    2  & 2     & 3     & 3     & 4     \\
+    3  & 5     & 8     & 8     & 12    \\
+    4  & 13    & 21    & 21    & 33    \\
+    5  & 34    & 55    & 55    & 88    \\
+    6  & 89    & 144   & 144   & 232   \\
+    7  & 233   & 377   & 377   & 609   \\
+    8  & 610   & 987   & 987   & 1596  \\
+    9  & 1597  & 2584  & 2584  & 4180  \\
+    10 & 4181  & 6765  & 6765  & 10945 \\
+    11 & 10946 & 17711 & 17711 & 28656 \\
+    12 & 28657 & 46368 & 46368 & 75024 \\
     \bottomrule
   \end{tabular}
 \end{table}
