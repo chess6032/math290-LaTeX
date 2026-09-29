@@ -31,42 +31,42 @@
 
 \begin{proof} The proof is by induction on $m$.
 
-BASE CASE: Consider the case for $m=1$. Observe,
+  BASE CASE: Consider the case for $m=1$. Observe,
 
-\[\begin{aligned}
-  \sum_{j=1}^1 F_{2j-1} &= F_{2(1)-1} \\
-                        &= F_{2-1} \\
-                        &= F_1 \\
-                        &= 1
-\end{aligned}\]
+  \[\begin{aligned}
+    \sum_{j=1}^1 F_{2j-1} &= F_{2(1)-1} \\
+                          &= F_{2-1} \\
+                          &= F_1 \\
+                          &= 1
+  \end{aligned}\]
 
-and,
+  and,
 
-\[
-  F_{2(1)} = F_2 = 1
-\]
+  \[
+    F_{2(1)} = F_2 = 1
+  \]
 
-Thus, the result holds for the base case $m=1$.
+  Thus, the result holds for the base case $m=1$.
 
-INDUCTIVE CASE: Suppose the result holds for some natural number $k$. That is,
+  INDUCTIVE CASE: Suppose the result holds for some natural number $k$. That is,
 
-\[
-  \sum_{j=1}^{k} F_{2j-1} = F_{2k}
-\]
+  \[
+    \sum_{j=1}^{k} F_{2j-1} = F_{2k}
+  \]
 
-Now consider the case for $k+1$. Observe,
+  Now consider the case for $k+1$. Observe,
 
-\begin{align}
-  \sum_{j=1}^{k+1} F_{2j-1} &= \sum_{j=1}^k (F_{2j-1}) + F_{2(k+1)-1} \notag \\
-                   &= F_{2k} + F_{2(k+1)-1} \tag{by the inductive hypothesis} \\
-                   &= F_{2k} + F_{2k+1} \notag \\
-                   &= F_{2k+2} \tag{by the definition of $F_n$} \\
-                   &= F_{2(k+1)} \notag
-\end{align}
+  \begin{align}
+    \sum_{j=1}^{k+1} F_{2j-1} &= \sum_{j=1}^k (F_{2j-1}) + F_{2(k+1)-1} \notag \\
+                    &= F_{2k} + F_{2(k+1)-1} \tag{by the inductive hypothesis} \\
+                    &= F_{2k} + F_{2k+1} \notag \\
+                    &= F_{2k+2} \tag{by the definition of $F_n$} \\
+                    &= F_{2(k+1)} \notag
+  \end{align}
 
-Notice that the substitution of $F_{2k+2}$ for $F_{2k} + F_{2k+1}$ is valid because the index $2k+2$ is always greater than 3. So $F_{2k+2}$ sits within the $n \ge 3$ piece of $F_n$, where $F_n = F_{n-1} + F_{n-2}$.
+  Notice that the substitution of $F_{2k+2}$ for $F_{2k} + F_{2k+1}$ is valid because the index $2k+2$ is always greater than 3. So $F_{2k+2}$ sits within the $n \ge 3$ piece of $F_n$, where $F_n = F_{n-1} + F_{n-2}$.
 
-The result, $F_{2(k+1)}$, has the form $F_{2m}$ for $m = k+1$. Thus, the result holds in the inductive case. Therefore, by the principle of mathematical induction, the result holds for any natural number $m$.
+  The result, $F_{2(k+1)}$, has the form $F_{2m}$ for $m = k+1$. Thus, the result holds in the inductive case. Therefore, by the principle of mathematical induction, the result holds for any natural number $m$.
 
 \end{proof}
 
@@ -96,25 +96,25 @@ The result, $F_{2(k+1)}$, has the form $F_{2m}$ for $m = k+1$. Thus, the result 
 
   Therefore, the result holds for the base case $m=1$.
 
-INDUCTIVE CASE: Suppose the result holds for some natural number $k$. That is,
+  INDUCTIVE CASE: Suppose the result holds for some natural number $k$. That is,
 
-\[
-  \sum_{2j}^{k} = F_{2k+1}-1
-\]
+  \[
+    \sum_{2j}^{k} = F_{2k+1}-1
+  \]
 
-Consider the case for $k+1$. Observe,
+  Consider the case for $k+1$. Observe,
 
-\begin{align}
-  \sum_{j=1}^{k+1}F_{2j} &= \sum_{j=1}^k (F_{2j}) + F_{2(k+1)} \notag \\
-                         &= (F_{2k+1} - 1) + F_{2(k+1)} \tag{by the inductive hypothesis} \\
-                         &= F_{2k+1} + F_{2k+2} - 1 \notag \\
-                         &= F_{2k+3} - 1 \tag{by the definition of $F_n$} \\
-                         &= F_{2(k+1)+1} - 1 \notag
-\end{align}
+  \begin{align}
+    \sum_{j=1}^{k+1}F_{2j} &= \sum_{j=1}^k (F_{2j}) + F_{2(k+1)} \notag \\
+                          &= (F_{2k+1} - 1) + F_{2(k+1)} \tag{by the inductive hypothesis} \\
+                          &= F_{2k+1} + F_{2k+2} - 1 \notag \\
+                          &= F_{2k+3} - 1 \tag{by the definition of $F_n$} \\
+                          &= F_{2(k+1)+1} - 1 \notag
+  \end{align}
 
-Once again, the substitution of $F_{2k+3}$ for $F_{2k+1} + F_{2k+2}$ is valid because the index $2k+3$ is always greater than 3.
+  Once again, the substitution of $F_{2k+3}$ for $F_{2k+1} + F_{2k+2}$ is valid because the index $2k+3$ is always greater than 3.
 
-The result $F_{2(k+1)+1} - 1$ has the form $F_{2m+1} - 1$ for $m = k+1$. Thus, the result holds for the inductive case, and by the principle of mathematical induction the result holds for all $m \in \mathbb{N}$.
+  The result $F_{2(k+1)+1} - 1$ has the form $F_{2m+1} - 1$ for $m = k+1$. Thus, the result holds for the inductive case, and by the principle of mathematical induction the result holds for all $m \in \mathbb{N}$.
 
 \end{proof}
 
