@@ -23,24 +23,25 @@ int main(int argc, char *argv[]) {
 
     int odd_fd = STDERR_FILENO;
     int even_fd = STDERR_FILENO;
-    FILE* odd_file;
-    FILE* even_file;
     
     if (argc > 2) {
         const char *odd_path = argv[2];
         const char *even_path = argv[3];
         
-        if ((odd_fd = open(odd_path, O_WRONLY | O_CREAT, 0644)) < 0) {
+        if ((odd_fd = open(odd_path, O_WRONLY | O_CREAT | O_TRUNC, 0644)) < 0) {
             fprintf(stderr, "Failed opening ODD file: %s\n", odd_path);
             perror("ERR");
             return 1;
         }
-        if ((even_fd = open(even_path, O_WRONLY | O_CREAT, 0644)) < 0) {
+        if ((even_fd = open(even_path, O_WRONLY | O_CREAT | O_TRUNC, 0644)) < 0) {
             fprintf(stderr, "Failed opening EVEN file: %s\n", even_path);
             perror("ERR");
             return 1;
         }
     }
+
+    FILE* odd_file = stderr;
+    FILE* even_file = stderr;
 
     if ((odd_file = fdopen(odd_fd, "w")) == NULL) {
         fprintf(stderr, "Failed converting ODD file to a stream\n");
