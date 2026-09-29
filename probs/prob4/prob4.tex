@@ -1,0 +1,50 @@
+\documentclass{article} % amsmart?
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{amssymb}
+
+\newtheorem{proposition}{Proposition}
+
+\title{Problem 4}
+\author{Caleb Hessing}
+\date{Sep 9, 2026}
+
+\begin{document}
+
+\maketitle
+
+\[
+  F_n = \begin{cases}
+    1                 & \text{if } n = 1 \\
+    1                 & \text{if } n = 2 \\
+    F_{n-1} + F_{n-2} & \text{if } n \ge 3
+  \end{cases}
+\]
+
+\begin{proposition}
+  \[
+    \sum_{j=1}^{k} F_{2j-1} = F_{2j}
+  \]
+\end{proposition}
+
+\begin{proof}\nobreakspace
+
+  An impressive proof.
+
+\end{proof}
+
+\begin{proposition}
+  \[
+    \sum_{j=1}^{k} F_{2j} = F_{2j+1} - 1
+  \]
+\end{proposition}
+
+\begin{proof}\nobreakspace
+
+  An impressive proof.
+
+\end{proof}
+
+\end{document}
