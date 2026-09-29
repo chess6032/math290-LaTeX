@@ -56,19 +56,17 @@ INDUCTIVE CASE: Suppose the result holds for some natural number $k$. That is,
 
 Now consider the case for $k+1$. Observe,
 
-\[\begin{aligned}
-  \sum_{j=1}^{k+1} F_{2j-1} &= \sum_{j=1}^k (F_{2j-1}) + F_{2(k+1)-1} \\
-                   &= F_{2k} + F_{2(k+1)-1} \\
-                   &= F_{2k} + F_{2k+1} \\
-                   &= F_{2k+2} \\
-                   &= F_{2(k+1)}
-\end{aligned}\]
+\begin{align}
+  \sum_{j=1}^{k+1} F_{2j-1} &= \sum_{j=1}^k (F_{2j-1}) + F_{2(k+1)-1} \notag \\
+                   &= F_{2k} + F_{2(k+1)-1} \tag{by the inductive hypothesis} \\
+                   &= F_{2k} + F_{2k+1} \notag \\
+                   &= F_{2k+2} \tag{by the definition of $F_n$} \\
+                   &= F_{2(k+1)} \notag
+\end{align}
 
-Let's pull back the curtain on some of the magic here. 
-$\sum_{j=1}^k (F_{2j-1}) = F_{2k}$ by the inductive hypothesis.
-And $F_{2k} + F_{2k+1} = F_{2k+2}$ by the definition of the Fibonacci sequence. We are allowed to do this substitution because the index $2k+2$ is always greater than 3, meaning that $F_{2k+2}$ sits within the $n > 3$ piece of $F_n$.
+Notice that the substitution of $F_{2k+2}$ for $F_{2k} + F_{2k+1}$ is valid because the index $2k+2$ is always greater than 3. So $F_{2k+2}$ sits within the $n \ge 3$ piece of $F_n$, where $F_n = F_{n-1} + F_{n-2}$.
 
-The result, $F_{2(k+1)}$ has the form $F_{2m}$ for $m = k+1$. Thus, the result holds in the inductive case. Therefore, by the principle of mathematical induction, the result holds for all $m \in \mathbb{N}$.
+The result, $F_{2(k+1)}$, has the form $F_{2m}$ for $m = k+1$. Thus, the result holds in the inductive case. Therefore, by the principle of mathematical induction, the result holds for all $m \in \mathbb{N}$.
 
 \end{proof}
 
