@@ -30,12 +30,12 @@ int main(int argc, char *argv[]) {
         const char *odd_path = argv[2];
         const char *even_path = argv[3];
         
-        if ((odd_fd = open(odd_path, O_WRONLY | O_CREAT)) < 0) {
+        if ((odd_fd = open(odd_path, O_WRONLY | O_CREAT, 0644)) < 0) {
             fprintf(stderr, "Failed opening ODD file: %s\n", odd_path);
             perror("ERR");
             return 1;
         }
-        if ((even_fd = open(even_path, O_WRONLY | O_CREAT)) < 0) {
+        if ((even_fd = open(even_path, O_WRONLY | O_CREAT, 0644)) < 0) {
             fprintf(stderr, "Failed opening EVEN file: %s\n", even_path);
             perror("ERR");
             return 1;
@@ -73,14 +73,14 @@ int main(int argc, char *argv[]) {
         if ((i+1) & 1) {
             // ODD IDX
             odd_sum += f_n;
-            fprintf(odd_file, "O(%d): %d    (%ld)\n", odd_idx, f_n, odd_sum);
-            fprintf(stdout, "F(%d): %d    (%d: %ld)\n", i+1, f_n, odd_idx, odd_sum);
+            // fprintf(odd_file, "O(%d): %d    (%ld)\n", odd_idx, f_n, odd_sum);
+            fprintf(odd_file, "F(%d): %d    (%ld)\n", i+1, f_n, odd_sum);
             ++odd_idx;
         } else {
             // EVEN IDX
             even_sum += f_n;
-            fprintf(even_file, "E(%d): %d    [%ld]\n", even_idx, f_n, even_sum);
-            fprintf(stdout, "F(%d): %d    [%d: %ld]\n", i+1, f_n, even_idx, even_sum);
+            // fprintf(even_file, "E(%d): %d    [%ld]\n", even_idx, f_n, even_sum);
+            fprintf(even_file, "F(%d): %d    [%ld]\n", i+1, f_n, even_sum);
             ++even_idx;
         }
     }
