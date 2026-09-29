@@ -4,6 +4,7 @@
 \usepackage{amsthm}
 \usepackage{graphicx}
 \usepackage{amssymb}
+\usepackage{booktabs}
 
 \newtheorem{proposition}{Proposition}
 \newcommand{\emptyline}{\vspace{\baselineskip}}
@@ -28,6 +29,30 @@ Let $F_n$ be the $n^\text{th}$ term in the Fibonacci sequence, which is defined 
 
 Then, let \{$O_n$\} be the sequence of the Fibonacci sequence's \textit{odd}-indexed terms and
 \{$E_n$\} be the sequence of its \textit{even}-indexed terms.
+
+Let's observe the sums of these two sequences.
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{ccccc}
+    \toprule
+    $n$ & $O_n$ & $E_n$ & $\sum O_n$ & $\sum E_n$ \\
+    \midrule
+    1 \\
+    2 \\
+    3 \\
+    4 \\
+    5 \\
+    6 \\
+    7 \\
+    8 \\
+    9 \\
+    10 \\
+    11 \\
+    12 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
 
 \begin{proposition}
   \[
