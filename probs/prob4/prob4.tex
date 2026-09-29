@@ -30,7 +30,7 @@ Let $F_n$ be the $n^\text{th}$ term in the Fibonacci sequence, $\{F_n\}$, define
 Then, let $\{O_n\}$ be the sequence of the Fibonacci sequence's \textit{odd}-indexed terms and
 $\{E_n\}$ be the sequence of its \textit{even}-indexed terms.
 
-Let's observe the sums of these two sequences.
+Let's observe the sums of these two sequences. 
 
 \begin{table}[h]
   \centering
@@ -53,6 +53,20 @@ Let's observe the sums of these two sequences.
     \bottomrule
   \end{tabular}
 \end{table}
+
+Note that in the table's header I've abbreviated $\sum_{i=1}^{n} O_i$ to just $\sum O_n$. I've done the same for $E_n$ as well.
+
+From this table, you may see that the sum of one sequence is related to the terms of the other. 
+Firstly, $\sum_{i=1}^{n} O_i = E_n$.
+Secondly, $\sum_{i=1}^{n} E_i = O_{n+1}-1$.
+We will prove these identities in this document.
+
+It would be more helpful to prove something about the Fibonacci sequence in general, so we should use $\{F_n\}$ in these proofs instead of $\{O_n\}$ and $\{E_n\}$.
+Fortunately, translating between these sequences isn't hard.
+For the odd-indexed terms, $O_j = F_{2j-1}$, and
+for the even-indexed terms, $E_j = F_{2j}$.
+
+With that, let's dive into the proofs.
 
 \begin{proposition}
   \[
@@ -156,5 +170,7 @@ Let's observe the sums of these two sequences.
   The result $F_{2(k+1)+1} - 1$ has the form $F_{2m+1} - 1$ for $m = k+1$. Thus, the result holds for the inductive case, and by the principle of mathematical induction the result holds for all $m \in \mathbb{N}$.
 
 \end{proof}
+
+\textit{Credits to Lotus for helping with formatting and \LaTeX\space wizardry.}
 
 \end{document}
