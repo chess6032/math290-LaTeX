@@ -1,6 +1,7 @@
 # Scorpions and Diamonds
 
 from enum import Enum
+import argparse
 
 # output formatting
 
@@ -16,7 +17,7 @@ class FormatOptions:
 
         self.ROWLEN = rowlen
 
-# classes 'n shih
+# boxes
 
 class BoxContent(Enum):
     DIAMOND = 0
@@ -82,10 +83,19 @@ def main(n, fmt: FormatOptions):
 
         print(f'{fmt.HEADER_COLOR} k = {k} {fmt.RESET_COLOR}')
         print_boxes(boxes, k, highlights, fmt)
+        
         key = input()
         if key == 'q':
             break
 
 if __name__ == "__main__":
-    fmt = FormatOptions()
-    main(100, fmt)
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-n', default=100)
+    parser.add_argument('--noformat', action='count')
+    parser.add_argument('--rowlen', '-r', default=20)
+    args=parser.parse_args()
+
+    use_ansi = False if args.noformat else True
+    fmt = FormatOptions(use_ansi, rowlen=int(args.rowlen))
+
+    main(int(args.n), fmt)
