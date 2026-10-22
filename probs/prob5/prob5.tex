@@ -1,0 +1,51 @@
+\documentclass{article} % amsmart?
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{amssymb}
+
+\newcommand{\emptyline}{\vspace{\baselineskip}}
+
+\title{Problem 5}
+\author{Caleb Hessing}
+\date{Oct 7, 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{center}
+\textit A: For all real numbers $x$, there exists an integer $n$ such that $n \le x < n+1$.
+\textit B: There exists an integer $n$ such that, for all real numbers $x$, $n \le x < n+1$.
+\end{center}
+
+\textbf{Part (a)} 
+
+\[\begin{gathered} 
+  \textit{A: } \forall x \in \mathbb R, \exists n \in \mathbb Z : n \le x < n + 1. \\
+  \textit{B: } \exists n \in \mathbb Z : n \le x < n + 1 \nobreakspace \forall x \in \mathbb R.  
+\end{gathered}\]
+
+\emptyline
+\textbf{Part (b)} 
+
+\textit A is saying that all real numbers are bounded between some two consecutive integers. This statement is true.
+\textit B is saying that there are consecutive integers between which all real numbers lie. This statement is not true.
+
+\emptyline
+\textbf{Part (c)}
+
+Suppose every person has exactly one soulmate, and that everyone is the soulmate of their soulmate. 
+Consider then these two statements:
+
+\begin{center}
+    \textit {A: } For every person $x$, there exists another person $y$ \\ such that $x$ and $y$ are soulmates. \\
+    \textit {B: } There exists some person $y$ such that, for every person $x$, \\ $x$ and $y$ are soulmates.
+\end{center}
+
+Statement A is true. It reflects the (unequivocally) true property that everyone has a soulmate.
+However, statement B suggests that there is some person that is \textit everyone's soulmate.
+But every person (undoubtedly) only has one soulmate, so this is false. 
+
+\end{document}
