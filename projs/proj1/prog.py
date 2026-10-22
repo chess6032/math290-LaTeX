@@ -43,7 +43,8 @@ class Box:
 
 def print_boxes(boxes, k: int, highlights: list[int], fmt: FormatOptions):
     # for each row...
-    for i in range(int(100/fmt.ROWLEN)):
+    n = len(boxes)
+    for i in range(n // fmt.ROWLEN):
         # print indeces
         for j in range(fmt.ROWLEN):
             idx = i*fmt.ROWLEN+j+1
