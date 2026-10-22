@@ -13,7 +13,9 @@ class FormatOptions:
         self.RESET_COLOR    = '\033[0m'  if use_ansi else ''
 
         self.HIGHLIGHT_FMT       = '\033[7m' if use_ansi else ''
-        self.RESET_HIGHLIGHT_FMT = '\033[0m' if use_ansi else ''
+        self.RESET_FMT = '\033[0m' if use_ansi else ''
+
+        self.DIM = '\033[2m' if use_ansi else ''
 
         self.ROWLEN = rowlen
 
@@ -27,12 +29,15 @@ class Box:
     def __init__(self, n: int, fmt: FormatOptions):
         self.content = BoxContent.SCORPION
         self.idx = n
+        self.n_flips = 0
+
         self.DIAMOND_COLOR = fmt.DIAMOND_COLOR
         self.SCORPION_COLOR = fmt.SCORPION_COLOR
         self.RESET_COLOR = fmt.RESET_COLOR
 
     def flip(self):
         self.content = BoxContent.DIAMOND if self.content == BoxContent.SCORPION else BoxContent.SCORPION
+        self.n_flips += 1
 
     def __str__(self):
         if self.content == BoxContent.DIAMOND:
@@ -53,14 +58,17 @@ def print_boxes(boxes, k: int, highlights: list[int], fmt: FormatOptions):
                 print(fmt.HEADER_COLOR,end='')
             if idx in highlights:
                 print(fmt.HIGHLIGHT_FMT, end='')
+
             print(idx, end='')
-            print(fmt.RESET_HIGHLIGHT_FMT + fmt.RESET_COLOR, end=' ' if len(str(idx)) > 1 else '  ')
+
+            print(fmt.RESET_FMT + fmt.RESET_COLOR, end=' ' if len(str(idx)) > 1 else '  ')
         print()
+
         # print boxes
         for j in range(fmt.ROWLEN):
             box = boxes[i*fmt.ROWLEN+j]
-
-            print(box, end='  ')
+            print(box, end='')
+            print(f'{fmt.DIM}{box.n_flips}{fmt.RESET_FMT}', end=' ')
         print()
     print()
 
@@ -70,7 +78,9 @@ def main(n, fmt: FormatOptions):
 
     print(f'{fmt.HEADER_COLOR} START {fmt.RESET_COLOR}')
     print_boxes(boxes, -1, [], fmt)
-    input()
+    key = input()
+    if key == 'q':
+        return
 
     # attendants go through...
     for i in range(n):
