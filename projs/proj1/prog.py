@@ -2,11 +2,21 @@
 
 from enum import Enum
 
+# output formatting
+
 USE_ANSI = True
-HIGHLIGHT_COLOR = '\033[33m' if USE_ANSI else ''
-DIAMOND_COLOR = '\033[36m' if USE_ANSI else ''
+
+HEADER_COLOR = '\033[33m'   if USE_ANSI else ''
+DIAMOND_COLOR = '\033[36m'  if USE_ANSI else ''
 SCORPION_COLOR = '\033[31m' if USE_ANSI else ''
-RESET_COLOR = '\033[0m' if USE_ANSI else ''
+RESET_COLOR = '\033[0m'     if USE_ANSI else ''
+
+HIGHLIGHT_FMT = '\033[7m' if USE_ANSI else ''
+RESET_HIGHLIGHT_FMT = '\033[0m' if USE_ANSI else ''
+
+ROWLEN = 10
+
+# classes 'n shih
 
 class BoxContent(Enum):
     DIAMOND = 0
@@ -28,18 +38,23 @@ class Box:
         else:
             return '?'
 
-def print_boxes(boxes):
-    rowlen = 20
+def print_boxes(boxes, k, highlights):
     # for each row...
-    for i in range(int(100/rowlen)):
+    for i in range(int(100/ROWLEN)):
         # print indeces
-        for j in range(rowlen):
-            idx = str(i*rowlen+j+1)
-            print(idx, end=' ' if len(idx) > 1 else '  ')
+        for j in range(ROWLEN):
+            idx = i*ROWLEN+j+1
+            if idx == k:
+                print(HEADER_COLOR,end='')
+            if idx in highlights:
+                print(HIGHLIGHT_FMT, end='')
+            print(idx, end='')
+            print(RESET_HIGHLIGHT_FMT + RESET_COLOR, end=' ' if len(str(idx)) > 1 else '  ')
         print()
-        # print contents
-        for j in range(rowlen):
-            box = boxes[i*rowlen+j]
+        # print boxes
+        for j in range(ROWLEN):
+            box = boxes[i*ROWLEN+j]
+
             print(box, end='  ')
         print()
     print()
@@ -48,19 +63,21 @@ def main(n):
     # n: number of boxes
     boxes = [Box(i+1) for i in range(n)]
 
-    print(f'{HIGHLIGHT_COLOR} START {RESET_COLOR}')
-    print_boxes(boxes)
+    print(f'{HEADER_COLOR} START {RESET_COLOR}')
+    print_boxes(boxes, -1, [])
     input()
 
     # attendants go through...
     for i in range(n):
         k = i+1
+        highlights = []
         for box in boxes:
             if box.idx % k == 0:
                 box.flip()
+                highlights.append(box.idx)
 
-        print(f'{HIGHLIGHT_COLOR} k = {k} {RESET_COLOR}')
-        print_boxes(boxes)
+        print(f'{HEADER_COLOR} k = {k} {RESET_COLOR}')
+        print_boxes(boxes, k, highlights)
         key = input()
         if key == 'q':
             break
