@@ -61,7 +61,7 @@ def print_boxes(boxes, k: int, highlights: list[int], fmt: FormatOptions):
 
             print(idx, end='')
 
-            print(fmt.RESET_FMT + fmt.RESET_COLOR, end=' ' if len(str(idx)) > 1 else '  ')
+            print(fmt.RESET_FMT + fmt.RESET_COLOR, end='' if len(str(idx)) > 2 else ' ' if len(str(idx)) > 1 else '  ')
         print()
 
         # print boxes
